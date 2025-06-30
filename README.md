@@ -1,10 +1,10 @@
 # SmartAssistent - Customer Service Chatbot
 
-A modern, AI-powered customer service chatbot built with Flask, TensorFlow, and NLTK. Features a beautiful, responsive UI with real-time chat functionality.
+A modern, AI-powered customer service chatbot built with Flask and NLTK. Features a beautiful, responsive UI with real-time chat functionality.
 
 ## 🚀 Features
 
-- **AI-Powered Responses**: Uses TensorFlow and NLTK for intelligent conversation
+- **Pattern-Based AI**: Uses intelligent pattern matching for conversation
 - **Modern UI**: Beautiful, responsive design with smooth animations
 - **Real-time Chat**: Instant messaging with typing indicators
 - **Mobile Responsive**: Works perfectly on all devices
@@ -13,7 +13,7 @@ A modern, AI-powered customer service chatbot built with Flask, TensorFlow, and 
 ## 🛠️ Tech Stack
 
 - **Backend**: Flask (Python)
-- **AI/ML**: TensorFlow, NLTK, scikit-learn
+- **AI/ML**: NLTK, Pattern Matching
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Icons**: Phosphor Icons
 - **Deployment**: Vercel
@@ -24,11 +24,9 @@ A modern, AI-powered customer service chatbot built with Flask, TensorFlow, and 
 Chatbot/
 ├── app.py                 # Main Flask application
 ├── intents.json          # Training data for the chatbot
-├── words.pkl             # Preprocessed words
-├── classes.pkl           # Intent classes
-├── vivek_customer_service_chatbot.h5  # Trained model
 ├── requirements.txt      # Python dependencies
 ├── vercel.json          # Vercel configuration
+├── runtime.txt          # Python version specification
 ├── templates/
 │   └── index.html       # Main HTML template
 ├── static/
@@ -44,11 +42,12 @@ Chatbot/
 
 1. **GitHub Account**: Your code should be in a GitHub repository
 2. **Vercel Account**: Sign up at [vercel.com](https://vercel.com)
-3. **Model Files**: Ensure all model files are in the repository:
-   - `vivek_customer_service_chatbot.h5`
-   - `words.pkl`
-   - `classes.pkl`
+3. **Required Files**: Ensure all files are in the repository:
+   - `app.py`
    - `intents.json`
+   - `requirements.txt`
+   - `vercel.json`
+   - `runtime.txt`
 
 ### Deployment Steps
 
@@ -71,19 +70,17 @@ Chatbot/
    - **Output Directory**: Leave empty
    - **Install Command**: `pip install -r requirements.txt`
 
-4. **Environment Variables** (if needed)
-   - Add any environment variables in the Vercel dashboard
-
-5. **Deploy**
+4. **Deploy**
    - Click "Deploy"
-   - Wait for the build to complete (may take 5-10 minutes for first deployment)
+   - Wait for the build to complete (2-3 minutes)
 
-### ⚠️ Important Notes
+### ✅ Advantages of This Approach
 
-- **Model Size**: TensorFlow models can be large. Vercel has a 50MB limit for serverless functions
-- **Cold Starts**: First request may be slower due to model loading
-- **NLTK Downloads**: Will be downloaded automatically on first request
-- **Memory Usage**: Monitor memory usage in Vercel dashboard
+- **Lightweight**: No heavy ML libraries
+- **Fast Deployment**: Quick build times
+- **Reliable**: No compatibility issues
+- **Cost-Effective**: Minimal resource usage
+- **Scalable**: Works well with serverless
 
 ## 🏃‍♂️ Local Development
 
@@ -112,8 +109,8 @@ Chatbot/
 ### Adding New Intents
 
 1. Edit `intents.json` to add new conversation patterns
-2. Retrain the model (requires local development setup)
-3. Update the model file
+2. Add patterns and responses for new intents
+3. Deploy the updated version
 
 ### Styling Changes
 
@@ -131,38 +128,34 @@ The chat icon can be customized in the CSS:
 
 ### Common Issues
 
-1. **Model Loading Errors**
-   - Ensure all model files are in the repository
-   - Check file paths in `app.py`
+1. **Build Failures**
+   - Check `requirements.txt` for correct versions
+   - Ensure Python 3.11 compatibility
 
 2. **NLTK Download Issues**
    - NLTK data will be downloaded automatically on Vercel
    - First request may take longer
 
-3. **Memory Issues**
-   - Monitor Vercel function logs
-   - Consider optimizing model size
-
-4. **Build Failures**
-   - Check `requirements.txt` for correct versions
-   - Ensure all dependencies are compatible
+3. **Pattern Matching Issues**
+   - Check `intents.json` format
+   - Ensure patterns are properly formatted
 
 ### Vercel-Specific Issues
 
 1. **Function Timeout**
-   - Increase `maxDuration` in `vercel.json`
-   - Optimize model loading
+   - Pattern matching is fast, should not timeout
+   - Check function logs in Vercel dashboard
 
-2. **Large Bundle Size**
-   - Consider using smaller model variants
-   - Optimize dependencies
+2. **Memory Issues**
+   - Lightweight approach uses minimal memory
+   - Monitor usage in Vercel dashboard
 
 ## 📞 Support
 
 For issues or questions:
 - Check Vercel deployment logs
 - Review function logs in Vercel dashboard
-- Ensure all model files are properly included
+- Ensure all files are properly included
 
 ## 📄 License
 
