@@ -1,6 +1,6 @@
 # SmartAssistent - Customer Service Chatbot
 
-A modern, AI-powered customer service chatbot built with Flask and NLTK. Features a beautiful, responsive UI with real-time chat functionality.
+A modern, lightweight customer service chatbot built with Flask. Features a beautiful, responsive UI with real-time chat functionality.
 
 ## 🚀 Features
 
@@ -9,11 +9,12 @@ A modern, AI-powered customer service chatbot built with Flask and NLTK. Feature
 - **Real-time Chat**: Instant messaging with typing indicators
 - **Mobile Responsive**: Works perfectly on all devices
 - **Interactive Chat Icon**: Enhanced with animations and notifications
+- **Ultra-Lightweight**: Minimal dependencies for fast deployment
 
 ## 🛠️ Tech Stack
 
 - **Backend**: Flask (Python)
-- **AI/ML**: NLTK, Pattern Matching
+- **AI/ML**: Built-in Python pattern matching
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Icons**: Phosphor Icons
 - **Deployment**: Vercel
@@ -24,9 +25,8 @@ A modern, AI-powered customer service chatbot built with Flask and NLTK. Feature
 Chatbot/
 ├── app.py                 # Main Flask application
 ├── intents.json          # Training data for the chatbot
-├── requirements.txt      # Python dependencies
+├── requirements.txt      # Python dependencies (Flask only)
 ├── vercel.json          # Vercel configuration
-├── runtime.txt          # Python version specification
 ├── templates/
 │   └── index.html       # Main HTML template
 ├── static/
@@ -47,7 +47,6 @@ Chatbot/
    - `intents.json`
    - `requirements.txt`
    - `vercel.json`
-   - `runtime.txt`
 
 ### Deployment Steps
 
@@ -64,23 +63,18 @@ Chatbot/
    - Import your GitHub repository
    - Vercel will automatically detect it's a Python project
 
-3. **Configure Build Settings**
-   - **Framework Preset**: Other
-   - **Build Command**: Leave empty (Vercel will auto-detect)
-   - **Output Directory**: Leave empty
-   - **Install Command**: `pip install -r requirements.txt`
-
-4. **Deploy**
+3. **Deploy**
    - Click "Deploy"
-   - Wait for the build to complete (2-3 minutes)
+   - Wait for the build to complete (1-2 minutes)
 
 ### ✅ Advantages of This Approach
 
-- **Lightweight**: No heavy ML libraries
-- **Fast Deployment**: Quick build times
-- **Reliable**: No compatibility issues
-- **Cost-Effective**: Minimal resource usage
-- **Scalable**: Works well with serverless
+- **Ultra-Fast Deployment** - 1-2 minutes build time
+- **Zero Compatibility Issues** - Only Flask dependency
+- **Minimal Resource Usage** - Very lightweight
+- **Highly Reliable** - No complex dependencies
+- **Cost-Effective** - Minimal serverless costs
+- **Scalable** - Perfect for serverless deployment
 
 ## 🏃‍♂️ Local Development
 
@@ -129,25 +123,21 @@ The chat icon can be customized in the CSS:
 ### Common Issues
 
 1. **Build Failures**
-   - Check `requirements.txt` for correct versions
-   - Ensure Python 3.11 compatibility
+   - Check `requirements.txt` for correct Flask version
+   - Ensure all files are properly committed
 
-2. **NLTK Download Issues**
-   - NLTK data will be downloaded automatically on Vercel
-   - First request may take longer
-
-3. **Pattern Matching Issues**
+2. **Pattern Matching Issues**
    - Check `intents.json` format
    - Ensure patterns are properly formatted
 
 ### Vercel-Specific Issues
 
 1. **Function Timeout**
-   - Pattern matching is fast, should not timeout
+   - Pattern matching is very fast, should not timeout
    - Check function logs in Vercel dashboard
 
 2. **Memory Issues**
-   - Lightweight approach uses minimal memory
+   - Ultra-lightweight approach uses minimal memory
    - Monitor usage in Vercel dashboard
 
 ## 📞 Support

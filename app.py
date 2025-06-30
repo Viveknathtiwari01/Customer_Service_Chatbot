@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 import random
 import json
 import re
-import nltk
 import os
 
 # Initialize Flask app
@@ -16,12 +15,6 @@ def load_resources():
     global intents
     
     if intents is None:
-        # Download NLTK resources if not already downloaded
-        try:
-            nltk.data.find('tokenizers/punkt')
-        except LookupError:
-            nltk.download('punkt', quiet=True)
-        
         intents = json.load(open('intents.json'))
 
 def clean_up_sentence(sentence):
